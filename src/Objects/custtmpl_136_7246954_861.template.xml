@@ -1,9 +1,9 @@
 <?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
 <pdf>
-  
+
     <#setting locale = "es_MX">
     <#setting time_zone= "America/Mexico_City">
-    <#setting number_format=",##0.00">
+    <#--  <#setting number_format=",##0.00">  -->
 
     <#assign "dataXML" = "">
     <#if custom?has_content>
@@ -531,10 +531,19 @@
                     </th>
                 </tr>
                 </thead>
+                <#assign itemCodigo = []>
+                <#list record.item as item>
+                    <#assign tipo_articulo = item.itemtype>
+                    <#if tipo_articulo != "Descuento">
+                        <#assign itemCodigo = itemCodigo + [item.item]>
+                    </#if>
+                </#list>
+
+                <#assign position = 0>
                 <#list dataXML.Conceptos.Concepto as Conceptos>
                     <tr>
                         <td align="center" colspan="2" line-height="150%"
-                            style="border-left: 0px; border-color: #e3e3e3;font-size: 5pt; padding-top: 1px;">1
+                            style="border-left: 0px; border-color: #e3e3e3;font-size: 5pt; padding-top: 1px;">${Conceptos_index + 1}
                         </td>
                         <td align="center" colspan="5" line-height="150%"
                             style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt; padding:0;">${Conceptos.atributos.ClaveProdServ}</td>
@@ -542,9 +551,12 @@
                         <td colspan="18" style="margin: 0; padding: 0;">
                             <table style="width: 100%">
                                 <tr>
-                                 
-                                    <td colspan="18"
-                                        style="border-left: 1px; border-color: #e3e3e3; font-size: 6pt; padding-right: 1px; padding-left: 1px; padding-top: 1px; padding-bottom: 0px;">${Conceptos.atributos.Descripcion}</td>
+                                    <#if position lt itemCodigo?size>
+                                        <td colspan="18" style="border-left: 1px; border-color: #e3e3e3; font-size: 6pt; padding-right: 1px; padding-left: 1px; padding-top: 1px; padding-bottom: 0px;">
+                                            ${itemCodigo[position]}<br />
+                                            ${Conceptos.atributos.Descripcion}
+                                        </td>
+                                    </#if>
 
                                 </tr>
 
@@ -666,7 +678,7 @@
                         <td align="center" colspan="4"
                             style="border-left: 1px; border-color: #e3e3e3;font-size: 5pt; padding-top: 1px; padding-left: 0px; padding-right: 0px;">${Conceptos.atributos.Importe?number?string[",##0.00"]}</td>
                     </tr>
-
+                    <#assign position = position + 1>
                 </#list>
             <#else>
                 <thead>
@@ -740,12 +752,12 @@
                     <td colspan="18" style="margin: 0; padding: 0;">
                         <table style="width: 100%">
                             <tr>
-                            
+
                                     <td colspan="18"
                                     style="border-left: 1px; border-color: #e3e3e3; font-size: 6pt; padding-right: 1px; padding-left: 1px; padding-top: 1px; padding-bottom: 0px;">
 ${dataXML.Conceptos.Concepto.atributos.Descripcion}</td>
-                                     
-                                
+
+
                             </tr>
 
                             <tr>
