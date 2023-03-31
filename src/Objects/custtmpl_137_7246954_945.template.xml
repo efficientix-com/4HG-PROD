@@ -308,6 +308,11 @@ td.cuerpotablainfo{
                     <td font-size="8pt"><b >Domicilio fiscal:</b> ${record.custbody_efx_fe_dirsubs?keep_before("undefined")?upper_case}
                     </td>
                 </tr>
+                <#if record.customer.custentity_efx_fe_version?keep_after(" ") == "4.0">
+                    <tr>
+                        <td font-size="8pt"><b >Régimen Fiscal:</b> ${record.customer.custentity_mx_sat_industry_type}</td>
+                    </tr>
+                </#if>
             </table>
             <#else>
     <tr>
@@ -321,6 +326,11 @@ td.cuerpotablainfo{
             ${record.custbody_efx_fe_dirsubs?keep_before("undefined")?upper_case}
         </td>
     </tr>
+    <#if record.customer.custentity_efx_fe_version?keep_after(" ") == "4.0">
+        <tr>
+            <td font-size="8pt"><b >Régimen Fiscal:</b> ${record.customer.custentity_mx_sat_industry_type}</td>
+        </tr>
+    </#if>
 </table>
 </#if>
 </td>
@@ -356,7 +366,10 @@ td.cuerpotablainfo{
             <td font-size="8pt"><b>Uso CFDI:</b> P01 - Por Definir</td>
         </tr>
         <tr>
-            <td font-size="8pt"><b>Domicilio fiscal:</b> ${record.customer.address?upper_case}</td>
+            <td font-size="8pt">
+                <b>Domicilio fiscal:</b>
+                ${record.custbody_tko_dir_cliente?upper_case}
+            </td>
         </tr>
     </#if>
     </table>
@@ -378,10 +391,16 @@ td.cuerpotablainfo{
     </tr><tr>
         <td font-size="8pt"><b>Tipo Comprobante</b></td>
         <td font-size="8pt">P Pago</td>
-    </tr><tr>
+    </tr>
+    <tr>
         <td font-size="8pt"><b>Versión Comprobante</b></td>
-        <td font-size="8pt">3.3</td>
-    </tr><tr>
+        <#if record.customer.custentity_efx_fe_version?keep_after(" ") == "4.0">
+            <td font-size="8pt">4.0</td>
+        <#else>
+            <td font-size="8pt">3.3</td>
+        </#if>
+    </tr>
+    <tr>
         <td font-size="8pt"><b>Moneda</b></td>
         <td font-size="8pt">XXX</td>
     </tr><tr>
@@ -516,7 +535,11 @@ td.cuerpotablainfo{
     </tr>
     </thead>
     <tr>
-        <td align="left" colspan="5" line-height="150%">Versión: 1.0</td>
+        <#if record.customer.custentity_efx_fe_version?keep_after(" ") == "4.0">
+            <td align="left" colspan="5" line-height="150%">Versión: 2.0</td>
+        <#else>
+            <td align="left" colspan="5" line-height="150%">Versión: 1.0</td>
+        </#if>
     </tr>
     <tr>
         <td align="left" colspan="4" ><b>Fecha de pago: </b></td>
@@ -625,6 +648,12 @@ td.cuerpotablainfo{
     <td align="left" colspan="4" ><b>Fecha de tipo de cambio: </b></td>
     <td align="left" colspan="4" >${record.trandate}</td>
 </tr>
+<#if record.customer.custentity_efx_fe_version?keep_after(" ") == "4.0">
+<tr>
+    <td align="left" colspan="4" ><b>Tipo de exportacion: </b></td>
+    <td align="left" colspan="4" >${record.custbody_mx_cfdi_sat_export_type}</td>
+</tr>
+</#if>
 
 </table>
 
