@@ -92,6 +92,54 @@
     </td>
     <td rowspan="3" width="40%" align="center" style="font-size: 9px;">
         ${record.custbody_efx_fe_dirsubs?keep_before("undefined")?upper_case}<br/>
+        <#if record.customer.custentity_efx_fe_version?keep_after(" ") == "4.0">
+            <#assign regfisc = record.subsidiary.custrecord_mx_sat_industry_type?keep_before(" ")>
+            <#if regfisc == "601">
+                    Régimen Fiscal: 601 - General de Ley Personas Morales
+                <#elseif regfisc == "603">
+                    Régimen Fiscal: 603 - Personas Morales con Fines no Lucrativos
+                <#elseif regfisc == "605">
+                    Régimen Fiscal: 605 - Sueldos y Salarios e Ingresos Asimilados a Salarios
+                <#elseif regfisc == "606">
+                    Régimen Fiscal: 606 - Arrendamiento
+                <#elseif regfisc == "607">
+                    Régimen Fiscal: 607 - Régimen de Enajenación o Adquisición de Bienes
+                <#elseif regfisc == "608">
+                    Régimen Fiscal: 608 - Demás ingresos
+                <#elseif regfisc == "609">
+                    Régimen Fiscal: 609 - Consolidación
+                <#elseif regfisc == "610">
+                    Régimen Fiscal: 610 - Residentes en el Extranjero sin Establecimiento Permanente en México
+                <#elseif regfisc == "611">
+                    Régimen Fiscal: 611 - Ingresos por Dividendos (socios y accionistas)
+                <#elseif regfisc == "612">
+                    Régimen Fiscal: 612 - Personas Físicas con Actividades Empresariales y Profesionales
+                <#elseif regfisc == "614">
+                    Régimen Fiscal: 614 - Ingresos por intereses
+                <#elseif regfisc == "615">
+                    Régimen Fiscal: 615 - Régimen de los ingresos por obtención de premios
+                <#elseif regfisc == "616">
+                    Régimen Fiscal: 616 - Sin obligaciones fiscales
+                <#elseif regfisc == "620">
+                    Régimen Fiscal: 620 - Sociedades Cooperativas de Producción que Optan por Diferir sus Ingresos
+                <#elseif regfisc == "621">
+                    Régimen Fiscal: 621 - Incorporación Fiscal
+                <#elseif regfisc == "622">
+                    Régimen Fiscal: 622 - Actividades Agrícolas, Ganaderas, Silvícolas Y Pesqueras
+                <#elseif regfisc == "623">
+                    Régimen Fiscal: 623 - Opcional para Grupos de Sociedades
+                <#elseif regfisc == "624">
+                    Régimen Fiscal: 624 - Coordinados
+                <#elseif regfisc == "628">
+                    Régimen Fiscal: 628 - Hidrocarburos
+                <#elseif regfisc == "629">
+                    Régimen Fiscal: 629 - De los Regímenes Fiscales Preferentes y de las Empresas Multinacionales
+                <#elseif regfisc == "630">
+                    Régimen Fiscal: 630 - Enajenación de acciones en bolsa de valores
+                <#else>
+                    Régimen Fiscal: ${record.customer.custentity_mx_sat_industry_type}
+            </#if>
+        </#if>
     </td>
     <td colspan="4" style="font-size: 10px;" align="right">
         <p style="font-size: 12px; margin:0px"><strong>PAGO</strong></p>
@@ -308,11 +356,7 @@ td.cuerpotablainfo{
                     <td font-size="8pt"><b >Domicilio fiscal:</b> ${record.custbody_efx_fe_dirsubs?keep_before("undefined")?upper_case}
                     </td>
                 </tr>
-                <#if record.customer.custentity_efx_fe_version?keep_after(" ") == "4.0">
-                    <tr>
-                        <td font-size="8pt"><b >Régimen Fiscal:</b> ${record.customer.custentity_mx_sat_industry_type}</td>
-                    </tr>
-                </#if>
+
             </table>
             <#else>
     <tr>
@@ -326,11 +370,7 @@ td.cuerpotablainfo{
             ${record.custbody_efx_fe_dirsubs?keep_before("undefined")?upper_case}
         </td>
     </tr>
-    <#if record.customer.custentity_efx_fe_version?keep_after(" ") == "4.0">
-        <tr>
-            <td font-size="8pt"><b >Régimen Fiscal:</b> ${record.customer.custentity_mx_sat_industry_type}</td>
-        </tr>
-    </#if>
+
 </table>
 </#if>
 </td>
@@ -371,6 +411,56 @@ td.cuerpotablainfo{
                 ${record.custbody_tko_dir_cliente?upper_case}
             </td>
         </tr>
+        <#if record.customer.custentity_efx_fe_version?keep_after(" ") == "4.0">
+            <tr>
+                <#assign regfisc = record.customer.custentity_mx_sat_industry_type?keep_before(" ")>
+                <#if regfisc == "601">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 601 - General de Ley Personas Morales</td>
+                    <#elseif regfisc == "603">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 603 - Personas Morales con Fines no Lucrativos</td>
+                    <#elseif regfisc == "605">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 605 - Sueldos y Salarios e Ingresos Asimilados a Salarios</td>
+                    <#elseif regfisc == "606">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 606 - Arrendamiento</td>
+                    <#elseif regfisc == "607">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 607 - Régimen de Enajenación o Adquisición de Bienes</td>
+                    <#elseif regfisc == "608">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 608 - Demás ingresos</td>
+                    <#elseif regfisc == "609">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 609 - Consolidación</td>
+                    <#elseif regfisc == "610">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 610 - Residentes en el Extranjero sin Establecimiento Permanente en México</td>
+                    <#elseif regfisc == "611">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 611 - Ingresos por Dividendos (socios y accionistas)</td>
+                    <#elseif regfisc == "612">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 612 - Personas Físicas con Actividades Empresariales y Profesionales</td>
+                    <#elseif regfisc == "614">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 614 - Ingresos por intereses</td>
+                    <#elseif regfisc == "615">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 615 - Régimen de los ingresos por obtención de premios</td>
+                    <#elseif regfisc == "616">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 616 - Sin obligaciones fiscales</td>
+                    <#elseif regfisc == "620">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 620 - Sociedades Cooperativas de Producción que Optan por Diferir sus Ingresos</td>
+                    <#elseif regfisc == "621">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 621 - Incorporación Fiscal</td>
+                    <#elseif regfisc == "622">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 622 - Actividades Agrícolas, Ganaderas, Silvícolas Y Pesqueras</td>
+                    <#elseif regfisc == "623">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 623 - Opcional para Grupos de Sociedades</td>
+                    <#elseif regfisc == "624">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 624 - Coordinados</td>
+                    <#elseif regfisc == "628">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 628 - Hidrocarburos</td>
+                    <#elseif regfisc == "629">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 629 - De los Regímenes Fiscales Preferentes y de las Empresas Multinacionales</td>
+                    <#elseif regfisc == "630">
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> 630 - Enajenación de acciones en bolsa de valores</td>
+                    <#else>
+                    <td font-size="8pt"><b >Régimen Fiscal:</b> ${record.customer.custentity_mx_sat_industry_type}</td>
+                </#if>
+            </tr>
+        </#if>
     </#if>
     </table>
 </td>
@@ -439,58 +529,10 @@ td.cuerpotablainfo{
 
 
 <table class="body" style="width: 100%; margin-top: 10px;"><tr>
-    <th align="left"><b>Régimen fiscal:</b></th>
     <th>UUID</th>
 </tr>
     <tr>
-        <#assign regfisc = record.subsidiary.custrecord_mx_sat_industry_type?keep_before(" ")>
-
-        <#if regfisc == "601">
-        <td>601 - General de Ley Personas Morales</td>
-        <#elseif regfisc == "603">
-        <td>603 - Personas Morales con Fines no Lucrativos</td>
-        <#elseif regfisc == "605">
-        <td>605 - Sueldos y Salarios e Ingresos Asimilados a Salarios</td>
-        <#elseif regfisc == "606">
-        <td>606 - Arrendamiento</td>
-        <#elseif regfisc == "607">
-        <td>607 - Régimen de Enajenación o Adquisición de Bienes</td>
-        <#elseif regfisc == "608">
-        <td>608 - Demás ingresos</td>
-        <#elseif regfisc == "609">
-        <td>609 - Consolidación</td>
-        <#elseif regfisc == "610">
-        <td>610 - Residentes en el Extranjero sin Establecimiento Permanente en México</td>
-        <#elseif regfisc == "611">
-        <td>611 - Ingresos por Dividendos (socios y accionistas)</td>
-        <#elseif regfisc == "612">
-        <td>612 - Personas Físicas con Actividades Empresariales y Profesionales</td>
-        <#elseif regfisc == "614">
-        <td>614 - Ingresos por intereses</td>
-        <#elseif regfisc == "615">
-        <td>615 - Régimen de los ingresos por obtención de premios</td>
-        <#elseif regfisc == "616">
-        <td>616 - Sin obligaciones fiscales</td>
-        <#elseif regfisc == "620">
-        <td>620 - Sociedades Cooperativas de Producción que Optan por Diferir sus Ingresos</td>
-        <#elseif regfisc == "621">
-        <td>621 - Incorporación Fiscal</td>
-        <#elseif regfisc == "622">
-        <td>622 - Actividades Agrícolas, Ganaderas, Silvícolas Y Pesqueras</td>
-        <#elseif regfisc == "623">
-        <td>623 - Opcional para Grupos de Sociedades</td>
-        <#elseif regfisc == "624">
-        <td>624 - Coordinados</td>
-        <#elseif regfisc == "628">
-        <td>628 - Hidrocarburos</td>
-        <#elseif regfisc == "629">
-        <td>629 - De los Regímenes Fiscales Preferentes y de las Empresas Multinacionales</td>
-        <#elseif regfisc == "630">
-        <td>630 - Enajenación de acciones en bolsa de valores</td>
-        <#else>
-        <td colspan="2" style="font-size: 7pt; padding: 2px;"></td>
-    </#if>
-    <td><#if record.custbody_mx_cfdi_uuid?has_content>${record.custbody_mx_cfdi_uuid}<#else><#if certData?has_content>${certData.custbody_mx_cfdi_uuid}</#if></#if></td>
+        <td><#if record.custbody_mx_cfdi_uuid?has_content>${record.custbody_mx_cfdi_uuid}<#else><#if certData?has_content>${certData.custbody_mx_cfdi_uuid}</#if></#if></td>
 </tr></table>
 
 

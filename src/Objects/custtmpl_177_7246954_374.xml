@@ -1,0 +1,9 @@
+<advancedpdftemplate scriptid="custtmpl_177_7246954_374" standard="STDTMPLEMPTY">
+  <description></description>
+  <displaysourcecode>T</displaysourcecode>
+  <isinactive>F</isinactive>
+  <preferred>F</preferred>
+  <printtype>TRANSACTION</printtype>
+  <title>EFX FE - Invoice Template LACROSSE INMUEBLES</title>
+  <trantype>CUSTINVC</trantype>
+</advancedpdftemplate>

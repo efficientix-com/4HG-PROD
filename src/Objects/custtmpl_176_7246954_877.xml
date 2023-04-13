@@ -1,0 +1,9 @@
+<advancedpdftemplate scriptid="custtmpl_176_7246954_877" standard="STDTMPLEMPTY">
+  <description></description>
+  <displaysourcecode>T</displaysourcecode>
+  <isinactive>F</isinactive>
+  <preferred>F</preferred>
+  <printtype>TRANSACTION</printtype>
+  <title>EFX FE - Invoice Template EuroTyres</title>
+  <trantype>CUSTINVC</trantype>
+</advancedpdftemplate>

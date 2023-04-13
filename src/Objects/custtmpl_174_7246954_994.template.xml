@@ -33,7 +33,7 @@
             <#assign "customCompanyInfo" = companyInformation>
         </#if>
         <#if customer.isperson == "T">
-            <#assign customerName = customer.firstname + ' ' + customer.lastname>
+            <#assign customerName =  customer.firstname + ' ' + customer.lastname>
         <#else>
             <#assign "customerName" = customer.companyname>
         </#if>
@@ -281,10 +281,10 @@
             <macro id="nlfooter">
                 <table class="footer" style="width: 100%;">
                     <tr>
-                      <td>Representación impresa de CFDI</td>
-
-
-
+                      <td>
+                            ESTE DOCUMENTO ES UNA REPRESENTACIÓN IMPRESA DE UN CFDI. <br />
+                            ${record.subsidiary.custrecord_tko_leyenda}
+                        </td>
                         <td align="right">
                             <pagenumber/>
                             de
@@ -489,7 +489,7 @@
                 <tr>
                     <td colspan="14" rowspan="2"
                         style="border: 1px; border-color: #e3e3e3; font-size:9px;"><#outputformat "XML">${dataXML.Receptor.atributos.Nombre}</#outputformat>
-                        <br/>${record.custbody_efx_fe_kiosko_address?upper_case}<br/>RFC: <#outputformat "XML">${dataXML.Receptor.atributos.Rfc}</#outputformat><br/></td>
+                        <br/>${record.custbody_efx_fe_kiosko_address?upper_case}<br/>RFC: ${dataXML.Receptor.atributos.Rfc}<br/></td>
                     <td></td>
 
                     <td align="left" colspan="14"
@@ -508,7 +508,7 @@
                     <td colspan="14" rowspan="2" style="border: 1px; border-color: #e3e3e3; font-size:9px;">
                         ${dataXML.Receptor.atributos.Nombre}
                         <br/>${record.billaddress?upper_case}<br/>
-                        RFC: <#outputformat "XML">${dataXML.Receptor.atributos.Rfc}</#outputformat>
+                        RFC: ${dataXML.Receptor.atributos.Rfc}
                         <#if dataXML.atributos.Version == "4.0">
                             <#if record.entity.custentity_mx_sat_industry_type?has_content>
                                 <#if record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "601">
@@ -578,7 +578,7 @@
 
 
                     <td align="left" colspan="14"
-                        style="border: 1px; border-color: #e3e3e3; font-size:9px;">${record.billaddress?keep_after(" />")?upper_case} </td>
+                        style="border: 1px; border-color: #e3e3e3; font-size:9px;">${record.shipaddress?keep_after(" />")?upper_case} </td>
                 </tr>
             </table>
         </#if>
@@ -594,7 +594,7 @@
                 <tr>
                     <td colspan="14" rowspan="2"
                         style="border: 1px; border-color: #e3e3e3; font-size:9px;"><#outputformat "XML">${record.custbody_efx_fe_kiosko_name}</#outputformat>
-                        <br/>${record.custbody_efx_fe_kiosko_address?upper_case}<br/>RFC: <#outputformat "XML">${record.custbody_efx_fe_kiosko_rfc?upper_case}</#outputformat>
+                        <br/>${record.custbody_efx_fe_kiosko_address?upper_case}<br/>RFC: ${record.custbody_efx_fe_kiosko_rfc?upper_case}
                         <br/></td>
                     <td></td>
 
@@ -609,12 +609,12 @@
                     <td class="body" colspan="14" style="background-color: #e3e3e3; font-size:9px;"><b>Cliente</b></td>
                     <td></td>
                     <td class="body" colspan="14" style="background-color: #e3e3e3; font-size:9px"><b>Lugar de
-                            entrega</b></td>
+                            ENTREGA</b></td>
                 </tr>
                 <tr>
                     <td colspan="14" rowspan="2" style="border: 1px; border-color: #e3e3e3; font-size:9px;">
                         ${record.billaddress?upper_case}<br/>
-                        RFC: <#outputformat "XML">${record.custbody_mx_customer_rfc?upper_case}</#outputformat>
+                        RFC:${record.custbody_mx_customer_rfc?upper_case}
                         <#if record.entity.custentity_efx_fe_version?keep_after(" ") == "4.0">
                             <#if record.entity.custentity_mx_sat_industry_type?has_content>
                                 <#if record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "601">
@@ -684,7 +684,7 @@
 
 
                     <td align="left" colspan="14"
-                        style="border: 1px; border-color: #e3e3e3; font-size:9px;">${record.billaddress?keep_after(" />")?upper_case} </td>
+                        style="border: 1px; border-color: #e3e3e3; font-size:9px;">${record.shipaddress?keep_after(" />")?upper_case} </td>
                 </tr>
             </table>
         </#if>
@@ -776,7 +776,7 @@
                         style="font-size: 4pt; padding-left: 0px; padding-right: 0px;">Unidad
                     </th>
                     <th align="center" colspan="5"
-                        style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">UPC
+                        style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Serie
                     </th>
                     <th align="center" colspan="4"
                         style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Cantidad
@@ -1001,7 +1001,7 @@
                     <th align="center" colspan="2" style="font-size: 4pt; padding-left: 0px; padding-right: 0px;">
                         Unidad
                     </th>
-                    <th align="center" colspan="5" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">UPC
+                    <th align="center" colspan="5" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Serie
                     </th>
                     <th align="center" colspan="4" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">
                         Cantidad
@@ -1220,7 +1220,7 @@ ${dataXML.Conceptos.Concepto.atributos.Descripcion}</td>
                     <th align="center" colspan="2" style="font-size: 4pt; padding-left: 0px; padding-right: 0px;">
                         Unidad
                     </th>
-                    <th align="center" colspan="5" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">UPC
+                    <th align="center" colspan="5" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">Serie
                     </th>
                     <th align="center" colspan="4" style="font-size: 5pt; padding-left: 0px; padding-right: 0px;">
                         Cantidad
@@ -1802,6 +1802,35 @@ ${dataXML.Conceptos.Concepto.atributos.Descripcion}</td>
             <tr>
                 <td class="cabecera" colspan="8"><b>Información CFDI</b></td>
             </tr>
+          <#if record.recmachcustrecord_mx_rcs_orig_trans?has_content>
+                <tr>
+                    <td colspan="8" style="border-color: #e3e3e3;font-size:90%;"><b>Documentos Relacionados:</b></td>
+                </tr>
+                    <#assign obj = relatedOBJ?eval>
+                    <tr style="border-left: 1px;border-right: 1px; border-color: #e3e3e3;font-size:90%; padding-left: 12px;font-size: 6pt;">
+                    <td colspan="2" style="font-weight: bold;border-top:1px;border-bottom:1px;border-right:1px;border-color: #e3e3e3;">Folio</td>
+                    <td colspan="3" style="font-weight: bold;border-top:1px;border-bottom:1px;border-right:1px;border-color: #e3e3e3;">Tipo</td>
+                    <td colspan="3" style="font-weight: bold;border-top:1px;border-bottom:1px;border-color: #e3e3e3;">UUID</td>
+                    </tr>
+                    <#list record.recmachcustrecord_mx_rcs_orig_trans as cfdiRelType>
+
+                        <tr style="border-left: 1px;border-right: 1px; border-color: #e3e3e3;font-size:90%; padding-left: 12px;font-size: 6pt;">
+                            <td colspan="2" style="font-weight: bold;border-bottom:1px;border-right:1px;border-color: #e3e3e3;">
+                                ${cfdiRelType.custrecord_mx_rcs_rel_cfdi}
+                            </td>
+
+
+                            <td colspan="3" style="font-weight: bold;border-bottom:1px;border-right:1px;border-color: #e3e3e3;">
+                                ${cfdiRelType.custrecord_mx_rcs_rel_type}
+                            </td>
+
+
+                            <td colspan="3" style="font-weight: bold;border-bottom:1px;border-color: #e3e3e3;">
+                                ${cfdiRelType.custrecord_mx_rcs_uuid}
+                            </td>
+                        </tr>
+                    </#list>
+            </#if>
             <tr>
                 <td style="font-size:7px;" rowspan="3" width=" 72px" colspan="1">
                     <img style="width: 70px;height:70px" src="${qrcodeImage}"/>

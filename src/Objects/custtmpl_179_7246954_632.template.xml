@@ -511,65 +511,65 @@
                         RFC: <#outputformat "XML">${dataXML.Receptor.atributos.Rfc}</#outputformat>
                         <#if dataXML.atributos.Version == "4.0">
                             <#if record.entity.custentity_mx_sat_industry_type?has_content>
-                                <#if infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "601">
+                                <#if record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "601">
                                     <#assign reg_fiscal = "601 - General de Ley Personas Morales">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "603">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "603">
                                     <#assign reg_fiscal = "603 - Personas Morales con Fines no Lucrativos">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "605">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "605">
                                     <#assign reg_fiscal = "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "606">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "606">
                                     <#assign reg_fiscal = "606 - Arrendamiento">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "607">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "607">
                                     <<#assign reg_fiscal = "607 - Régimen de Enajenación o Adquisición de Bienes">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "608">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "608">
                                     <#assign reg_fiscal = "608 - Demás ingresos">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "610">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "610">
                                     <#assign reg_fiscal = "610 - Residentes en el Extranjero sin Establecimiento Permanente en México">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "611">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "611">
                                     <#assign reg_fiscal = "611 - Ingresos por Dividendos (socios y accionistas)">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "612">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "612">
                                     <#assign reg_fiscal = "612 - Personas Físicas con Actividades Empresariales y Profesionales">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "614">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "614">
                                     <#assign reg_fiscal = "614 - Ingresos por intereses">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "615">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "615">
                                     <#assign reg_fiscal = "615 - Régimen de los ingresos por obtención de premios">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "616">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "616">
                                     <#assign reg_fiscal = "616 - Sin obligaciones fiscales">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "620">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "620">
                                     <#assign reg_fiscal = "620 - Sociedades Cooperativas de Producción que Optan por Diferir sus Ingresos">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "621">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "621">
                                     <#assign reg_fiscal = "621 - Incorporación Fiscal">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "622">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "622">
                                     <#assign reg_fiscal = "622 - Actividades Agrícolas, Ganaderas, Silvícolas Y Pesqueras">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "623">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "623">
                                     <#assign reg_fiscal = "623 - Opcional para Grupos de Sociedades">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "624">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "624">
                                     <#assign reg_fiscal = "624 - Coordinados">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "625">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "625">
                                     <#assign reg_fiscal = "625 - Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "626">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "626">
                                     <#assign reg_fiscal = "626 - Régimen Simplificado de Confianza">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
                                 <#else>
-                                    <br />Regimen Fiscal:${infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ")?upper_case}
+                                    <br />Regimen Fiscal:${record.entity.custentity_mx_sat_industry_type?keep_before(" ")?upper_case}
                                 </#if>
                             </#if>
                         </#if>
@@ -617,65 +617,65 @@
                         RFC: <#outputformat "XML">${record.custbody_mx_customer_rfc?upper_case}</#outputformat>
                         <#if record.entity.custentity_efx_fe_version?keep_after(" ") == "4.0">
                             <#if record.entity.custentity_mx_sat_industry_type?has_content>
-                                <#if infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "601">
+                                <#if record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "601">
                                     <#assign reg_fiscal = "601 - General de Ley Personas Morales">
                                     <br />Regimen Fiscal: ${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "603">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "603">
                                     <#assign reg_fiscal = "603 - Personas Morales con Fines no Lucrativos">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "605">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "605">
                                     <#assign reg_fiscal = "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "606">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "606">
                                     <#assign reg_fiscal = "606 - Arrendamiento">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "607">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "607">
                                     <<#assign reg_fiscal = "607 - Régimen de Enajenación o Adquisición de Bienes">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "608">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "608">
                                     <#assign reg_fiscal = "608 - Demás ingresos">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "610">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "610">
                                     <#assign reg_fiscal = "610 - Residentes en el Extranjero sin Establecimiento Permanente en México">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "611">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "611">
                                     <#assign reg_fiscal = "611 - Ingresos por Dividendos (socios y accionistas)">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "612">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "612">
                                     <#assign reg_fiscal = "612 - Personas Físicas con Actividades Empresariales y Profesionales">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "614">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "614">
                                     <#assign reg_fiscal = "614 - Ingresos por intereses">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "615">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "615">
                                     <#assign reg_fiscal = "615 - Régimen de los ingresos por obtención de premios">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "616">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "616">
                                     <#assign reg_fiscal = "616 - Sin obligaciones fiscales">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "620">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "620">
                                     <#assign reg_fiscal = "620 - Sociedades Cooperativas de Producción que Optan por Diferir sus Ingresos">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "621">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "621">
                                     <#assign reg_fiscal = "621 - Incorporación Fiscal">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "622">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "622">
                                     <#assign reg_fiscal = "622 - Actividades Agrícolas, Ganaderas, Silvícolas Y Pesqueras">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "623">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "623">
                                     <#assign reg_fiscal = "623 - Opcional para Grupos de Sociedades">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "624">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "624">
                                     <#assign reg_fiscal = "624 - Coordinados">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "625">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "625">
                                     <#assign reg_fiscal = "625 - Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
-                                <#elseif infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ") == "626">
+                                <#elseif record.entity.custentity_mx_sat_industry_type?keep_before(" ") == "626">
                                     <#assign reg_fiscal = "626 - Régimen Simplificado de Confianza">
                                     <br />Regimen Fiscal:${reg_fiscal?upper_case}
                                 <#else>
-                                    <br />Regimen Fiscal:${infoEmpresa.custrecord_mx_sat_industry_type?keep_before(" ")?upper_case}
+                                    <br />Regimen Fiscal:${record.entity.custentity_mx_sat_industry_type?keep_before(" ")?upper_case}
                                 </#if>
                             </#if>
                         </#if>

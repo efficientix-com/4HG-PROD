@@ -1,0 +1,9 @@
+<advancedpdftemplate scriptid="custtmpl_175_7246954_762" standard="STDTMPLEMPTY">
+  <description></description>
+  <displaysourcecode>T</displaysourcecode>
+  <isinactive>F</isinactive>
+  <preferred>F</preferred>
+  <printtype>TRANSACTION</printtype>
+  <title>EFX FE - Invoice Template Bravo Rentals</title>
+  <trantype>CUSTINVC</trantype>
+</advancedpdftemplate>
