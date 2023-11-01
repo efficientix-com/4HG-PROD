@@ -1486,7 +1486,7 @@ ${dataXML.Conceptos.Concepto.atributos.Descripcion}</td>
 
                     </tr>
                     <tr>
-                        <td colspan="1" style="font-size: 7pt;  border-color: #e3e3e3;border-left: 1px;"><b>Traslados</b></td>
+                        <td colspan="1" style="font-size: 7pt;  border-color: #e3e3e3;border-left: 1px;"><b>Trasladados</b></td>
                         <#if dataXML?has_content>
                             <td align="right" colspan="1"
                                 style="font-size: 7pt;">${dataXML.Impuestos.atributos.TotalImpuestosTrasladados?number?string[",##0.00"]}</td>

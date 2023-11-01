@@ -390,7 +390,7 @@ td.cuerpotablainfo{
             <td font-size="8pt"><b>RFC:</b> ${record.custbody_efx_fe_factoraje_rfc}</td>
         </tr>
         <tr>
-            <td font-size="8pt"><b>Uso CFDI:</b> P01 - Por Definir</td>
+            <td font-size="8pt"><b>Uso CFDI:</b> CP01 - Pagos</td>
         </tr>
         <tr>
             <td font-size="8pt"><b>Domicilio fiscal:</b> ${record.custbody_efx_fe_factoraje_dir?upper_case}</td>
@@ -403,7 +403,7 @@ td.cuerpotablainfo{
             <td font-size="8pt"><b>RFC:</b> ${record.customer.custentity_mx_rfc}</td>
         </tr>
         <tr>
-            <td font-size="8pt"><b>Uso CFDI:</b> P01 - Por Definir</td>
+            <td font-size="8pt"><b>Uso CFDI:</b> CP01 - Pagos</td>
         </tr>
         <tr>
             <td font-size="8pt">
